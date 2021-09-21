@@ -37,11 +37,12 @@ void printArray(int arr[], int size)    {
   
 int main()  {
     // int arr[] = {64, 34, 25, 12, 22, 11, 90};
-    int arr[100];
-    for (int i = 0; i < 100; i++) {
+    // int n = sizeof(arr)/sizeof(arr[0]);
+    int n = rand() % 100;
+    int arr[n];
+    for (int i = 0; i < n; i++) {
         arr[i] = rand() % 100;
     }
-    int n = sizeof(arr)/sizeof(arr[0]);
     cout << "Array: ";
     printArray(arr, n);
     cout << endl;
