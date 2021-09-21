@@ -1,7 +1,7 @@
 
 // Optimized implementation of Bubble sort
-#include <iostream>
-#include <ctime>
+#include <bits/stdc++.h>
+#include <chrono>
 using namespace std;
   
 void swap(int *xp, int *yp) {
@@ -37,23 +37,34 @@ void printArray(int arr[], int size)    {
   
 int main()  {
     // int arr[] = {64, 34, 25, 12, 22, 11, 90};
-    int arr[10];
-    for (int i = 0; i < 10; i++) {
+    int arr[100];
+    for (int i = 0; i < 100; i++) {
         arr[i] = rand() % 100;
     }
     int n = sizeof(arr)/sizeof(arr[0]);
     cout << "Array: ";
     printArray(arr, n);
     cout << endl;
-    time_t startTime = time(0);
-    cout <<"Current Time: " <<  startTime << endl;
+    
+    auto start = chrono::high_resolution_clock::now();
+    // unsync the I/O of C and C++.
+    ios_base::sync_with_stdio(false);
+    
+    cout <<"Start Time: " <<  start << endl;
+    
     bubbleSort(arr, n);
-    time_t endTime = time(0);
-    cout <<"Time after execution: " <<  startTime << endl;
+    
+    auto end = chrono::high_resolution_clock::now();
+    cout <<"Time after execution: " <<  end << endl;
     cout << endl;
+    
     cout << "Sorted array: ";
     printArray(arr, n);
     cout << endl;
-    cout << "Time difference is: " << endTime - startTime;
+    
+    double time_taken = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
+    time_taken *= 1e-9;
+    
+    cout << "Time difference is: " << time_taken << setprecision(6);
     return 0;
 }
