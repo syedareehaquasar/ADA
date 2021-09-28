@@ -1,5 +1,3 @@
-
-// Optimized implementation of Bubble sort
 #include <bits/stdc++.h>
 #include <chrono>
 using namespace std;
@@ -51,13 +49,9 @@ int main()  {
     // unsync the I/O of C and C++.
     ios_base::sync_with_stdio(false);
     
-    cout <<"Start Time: " <<  start << endl;
-    
     bubbleSort(arr, n);
     
     auto end = chrono::high_resolution_clock::now();
-    cout <<"Time after execution: " <<  end << endl;
-    cout << endl;
     
     cout << "Sorted array: ";
     printArray(arr, n);
