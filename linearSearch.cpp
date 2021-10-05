@@ -30,10 +30,22 @@ int main()  {
     int x;
     cout << "Enter element you want to search in  the array: ";
     cin >> x;
-   
+    
+    auto start = chrono::high_resolution_clock::now();
+    // unsync the I/O of C and C++.
+    ios_base::sync_with_stdio(false);
+
     int result = linearSearch(arr, n, x);
+
+    auto end = chrono::high_resolution_clock::now();
+
     (result == -1)
         ? cout << "Element is not present in array"
         : cout << "Element is present at index " << result;
+
+    double time_taken = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
+    time_taken *= 1e-9;
+    cout << "Time difference is: " << time_taken << setprecision(6) << endl;
+
     return 0;
 }
