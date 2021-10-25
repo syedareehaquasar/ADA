@@ -3,14 +3,14 @@
 
 ## Sorting Algorithms
 - Merge sort
-- Quick sort
+- Quicksort
 - Bubble sort
 - Bucket sort
 - Radix sort
 - Shell sort
 - Selection sort
-- Heap sort 
-- Insertion SOrt
+- Heapsort 
+- Insertion Sort
 
 
 ## Searching Algorithms
