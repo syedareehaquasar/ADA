@@ -3,12 +3,15 @@
 using namespace std;
 
 // place current element in right order as we move forward
-void insertionSort(int arr[], int n)    {
-    for (int i = 1; i < n; i++) {
+void insertionSort(int arr[], int n)
+{
+    for (int i = 1; i < n; i++)
+    {
         int key = arr[i];
         int j = i - 1;
         // compare to all predecessors
-        while (j >= 0 && arr[j] > key)  {
+        while (j >= 0 && arr[j] > key)
+        {
             arr[j + 1] = arr[j];
             j = j - 1;
         }
@@ -37,26 +40,29 @@ void printArray(float arr[], int size)
     cout << endl;
 }
 
-double sortApp(int n)  {
+double sortApp(int n)
+{
     int arr[n];
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         arr[i] = rand() % 100;
     }
 
     auto start = chrono::high_resolution_clock::now();
     ios_base::sync_with_stdio(false);
 
-	insertionSort(arr, n);
+    insertionSort(arr, n);
 
     auto end = chrono::high_resolution_clock::now();
 
     double time_taken = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
     time_taken *= 1e-9;
 
-	return time_taken;
+    return time_taken;
 }
 
-int main() {
+int main()
+{
     double times[10];
     int ns[10];
     for (int x = 0; x < 10; x++)

@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
-int linearSearch(int arr[], int n, int x) {
+
+int linearSearch(int arr[], int n, int x)
+{
     for (int i = 0; i < n; i++)
         if (arr[i] == x)
             return i;
@@ -29,29 +30,32 @@ void printArray(float arr[], int size)
     cout << endl;
 }
 
-double search(int n)  {
+double search(int n)
+{
     int arr[n];
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         arr[i] = rand() % 100;
     }
     sort(arr, arr + n);
-    
+
     int x = rand() % 100;
 
     auto start = chrono::high_resolution_clock::now();
     ios_base::sync_with_stdio(false);
 
-	linearSearch(arr, n, x);
+    linearSearch(arr, n, x);
 
     auto end = chrono::high_resolution_clock::now();
 
     double time_taken = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
     time_taken *= 1e-9;
 
-	return time_taken;
+    return time_taken;
 }
 
-int main() {
+int main()
+{
     double times[10];
     int ns[10];
     for (int x = 0; x < 10; x++)
